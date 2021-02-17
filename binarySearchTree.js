@@ -166,10 +166,9 @@ class BinarySearchTree {
         return this.values;
     }
     //O(n) each node needs to be visited oncse.
-    bfs(tree, values = []){
+    bfs(values = []){
         const queue = new Queue(); //Assuming a queue is implement
-        const node = tree.root;
-        queue.enqueue(node);
+        queue.enqueue(this);
         while(queue.length){
             const node = queue.dequeue(); //remove from the queue
             values.push(node.value); //add that value from the queue to an array
@@ -182,6 +181,36 @@ class BinarySearchTree {
             }
         }
         return values
+    }
+    inOrder(values=[]){
+        if(this.left){
+            values = this.left.inOrder(values);
+        }
+        values.push(this.key)
+        if(this.right){
+            values = this.right.inOrder(values);
+        }
+        return values;
+    }
+    preOrder(values = []){
+        values.push(this.key)
+        if(this.left){
+            this.left.preOrder(values)
+        }
+        if(this.right){
+            this.right.preOrder(values);
+        }
+        return values;
+    }
+    postOrder(values = []){
+        if(this.left){
+            values = this.left.postOrder(values);
+        }
+        if(this.right){
+            values= this.right.postOrder(values);
+        }
+        values.push(this.key);
+        return values;
     }
   }
   

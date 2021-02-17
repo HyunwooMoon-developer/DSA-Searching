@@ -20,16 +20,49 @@ Each ordering will give the node values in a different order.
 
 ### In-order 
 
-the algorithm that the left branch is visited, then the node itself is handled, then the right branch is visited.
+the algorithm that the left branch is visited, then the node itself is handled, then the right branch is visited.(Step left, Process Node, Step right)
+
+Uses Cases : Working with BSTs
+
+
+                               4
+                            /     \
+                           2       6
+                         /   \    /  \
+                        1     3  5    7
+
+=> 1 - 2 - 3 - 4 - 5 - 6 - 7
 
 ### Pre-order
 
-If the node is hanlded before the branches
+If the node is hanlded before the branches (Process Node, Setp left, Step right)
+
+Uses Cases : Organizational chart, Directory structure, HTML, XML, JSON
+
+                               a
+                            /     \
+                           b       c
+                         /   \    /  \
+                        d    e   f    g
+    
+=> a - b - d - e - c - f - g
+
 
 ### Post-order
 
-If the node is handled after the branches
+If the node is handled after the branches (Step left, Step right, Process Node)
 
+Uses Cases : Calculation relationship
+Language Processors
+
+                               a
+                            /     \
+                           b       c
+                         /   \    /  \
+                        d    e   f    g
+
+=> d - e - b - f - g - c - a
+ 
 ## BFS(Breadth-first search)
 
 Breadth-first search works across the row of a tree. So the top row will be handled 1st, then the 2nd row, and so on. The tree is visited level by level.
